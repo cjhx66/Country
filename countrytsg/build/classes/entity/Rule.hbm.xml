@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="entity.Rule" table="rule">
+		<id name="ruid" column="ruid" type="int">
+			<generator class="native"/>
+		</id>
+		<property name="runame" column="runame" />
+		<property name="ruday" column="ruday" />
+		<property name="runum" column="runum"></property>
+		<property name="renew" column="renew"></property>
+		<property name="userid" column="userid"></property>
+		<property name="rutime" column="rutime"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+	<class name="PubNotice" table="pubnotice">
+		<id name="pnid" type="integer">
+			<column name="pnid" />
+			<generator class="identity" /><!-- 生成主键的方式 -->
+		</id>
+		<property name="title" column="title"></property>
+		<property name="content" column="content"></property>
+		<property name="pntime" column="pntime"></property>
+		<property name="uid" column="uid"></property>
+		<property name="num" column="num"></property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="entity.BookManage" table="bookmanage">
+		<id name="bid" column="bid" type="int">
+			<generator class="native"/>
+		</id>
+		<property name="bname" column="bname" />
+		<property name="cid" column="cid" />
+		<property name="uid" column="uid"></property>
+		<property name="ISBN" column="ISBN"></property>
+		<property name="tid" column="tid"></property>
+		<property name="bnum" column="bnum"></property>
+		<property name="author" column="author"></property>
+		<property name="press" column="press"></property>
+		<property name="price" column="price"></property>
+		<property name="baddTime" column="baddTime"></property>
+		<property name="bookid" column="bookid" />
+	</class>
+</hibernate-mapping>

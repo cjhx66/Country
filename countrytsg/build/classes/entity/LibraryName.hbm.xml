@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="entity.LibraryName" table="LibraryName">
+		<id name="lnid" column="lnid" type="int">
+			<generator class="native"/>
+		</id>
+		<property name="lname" column="lname" />
+		<property name="cid" column="cid" />
+		<property name="uid" column="uid"></property>
+		<property name="colbook" column="colbook"></property>
+		<property name="userNum" column="userNum"></property>
+		<property name="area" column="area"></property>
+		<property name="intro" column="intro"></property>
+		<property name="lphone" column="lphone"></property>
+		<property name="laddress" column="laddress"></property>
+	</class>
+</hibernate-mapping>

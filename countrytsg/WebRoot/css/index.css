@@ -1,0 +1,52 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background-image: url(../images/logo.png);
+	background-repeat:no-repeat;
+	height:600px;
+	margin:0 auto;
+	background-position: center;
+}
+#header{
+	margin: auto;
+	/*  width: 600px; */
+	position: relative;
+	top:34%;
+	left:52%;
+	height:50%;
+}
+/* #header_1{
+	float: right;
+} */
+input{
+	font-size: 16px;
+	height:39px;
+	line-height: 38px;
+}
+img{
+	border:none;
+}
+.valiCode{
+	padding:0;
+	/* margin-top:13px; */
+	width:140px;
+	line-height: 33px;
+	height:33px;
+	border:1px solid #B8C7CE;
+	color:#C4D1DC;
+}
+.i-text{
+	width:228px;
+	/* margin-left: 38px */;
+	color:#C4D1DC;
+}
+.dl{
+	width:120px;
+	/* position:relative; */
+	/* top:25px; */
+	background-color: #0070C3;
+	border:none;
+	color:#ffffff;
+}

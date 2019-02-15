@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+	<class name="Country" table="country">
+		<id name="cid" type="integer">
+			<column name="cid" />
+			<generator class="identity" /><!-- 生成主键的方式 -->
+		</id>
+		<property name="cname" column="cname"></property>
+		<property name="caddress" column="caddress"></property>
+		<property name="cphone" column="cphone"></property>
+		<property name="caddTime" column="caddTime"></property>
+	</class>
+
+</hibernate-mapping>

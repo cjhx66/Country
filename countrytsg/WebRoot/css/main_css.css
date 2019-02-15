@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0px;
+}
+
+body {
+	background-color: #2967a4;
+}
+
+.menulist {
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 2px;
+	text-align: left;
+	color: #000;
+}
+
+.menulist li {
+	height: 24px;
+	line-height: 24px;
+	padding-left: 24px;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	text-align: left;
+}
+
+.menulist li img {
+	position: absolute;
+	left: 4px;
+	top: 4px;
+	width: 16px;
+	height: 16px;
+}
+
+.menulist li.over .menuitem-l,.menulist li.selected .menuitem-l {
+	width: 2px;
+	height: 24px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.menulist li.over .menuitem-r,.menulist li.selected .menuitem-r {
+	width: 2px;
+	height: 24px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+/*导航  个人图标 */
+#portrait {
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px #111;
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	right: 27px;
+	top: 10px;
+	background: #d2d2f2;
+	border: 3px solid #fff;
+	behavior: url(css/pie.htc);
+	text-align: center;
+}
+
+/*导航 标题 */
+#log {
+	background-image:url('../images/tp.png');
+	background-repeat: no-repeat;
+	margin-left:50px;
+	margin-top:10px;
+	/*  border:1px solid red; */
+	/* width: 480px; */
+	height: 50px;
+	float: left;
+	font-size: 26px;
+	color: #fff;
+	font-family: KaiTi;
+	padding-left: 80px;
+	line-height: 60px;
+	font-weight: bolder;
+}
+/*时间*/
+#timer {
+	width: 200px;
+	font-size: 12px;
+	color: #fff;
+	font-family: "����";
+	float: right;
+	margin-top: 10px;
+}
+/*欢迎*/
+#welCome {
+	float: right;
+	width: 210px;
+	margin-right: 20px;
+	font-family: "����";
+	font-size: 16px;
+	color: #fff;
+}
+/*底部*/
+#footer {
+	margin: 8px;
+	padding: 0; 
+	color : #fff;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: ����, ����;
+	text-align: center;
+	width: 100%;
+	display: block;
+}

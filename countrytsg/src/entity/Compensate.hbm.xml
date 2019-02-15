@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+	<class name="Compensate" table="Compensate">
+		<id name="gid" type="int">
+			<column name="gid" />
+			<generator class="identity" /><!-- 生成主键的方式 -->
+		</id>
+		<property name="userid" column="userid"></property>
+		<property name="bid" column="bid"></property>
+		<property name="cid" column="cid"></property>
+		<property name="bookid" column="bookid"></property>
+		<property name="guaTime" column="guaTime"></property>
+		<property name="peiTime" column="peiTime"></property>
+		<property name="yprice" column="yprice"></property>
+		<property name="sprice" column="sprice"></property>
+	</class>
+
+</hibernate-mapping>

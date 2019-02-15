@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<!-- 设置上传文件的大小 -->
+	<constant name="struts.multipart.maxSize" value="4294967296" />
+	<!-- 验证码 -->
+	<package name="Security" namespace="/img" extends="struts-default">
+		<action name="SecurityImgAction" class="action.SecurityImgAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">imageStream</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+	</package>
+	<!-- 用户管理 -->
+	<package name="data" extends="struts-default">
+		<action name="login" class="userAction" method="login"></action>
+		<action name="logout" class="userAction" method="logout"></action>
+		<action name="changepwd" class="userAction" method="changepwd"></action>
+		<action name="getUser" class="userAction" method="getUser"></action>
+		<action name="addUser" class="userAction" method="addUser"></action>
+		<action name="editUser" class="userAction" method="editUser"></action>
+		<action name="findUser" class="userAction" method="findUser"></action>
+		<action name="delUser" class="userAction" method="delUser"></action>
+		<action name="getUsers" class="userAction" method="getUsers"></action>
+		<action name="getCs" class="userAction" method="getCs"></action>
+		<action name="findUserid" class="userAction" method="findUserid"></action>
+		<action name="findPerson" class="userAction" method="findPerson"></action>
+		<action name="editPerson" class="userAction" method="editPerson"></action>
+	</package>
+	<!-- 帐户管理 -->
+	<package name="country" extends="struts-default">
+		<action name="getCountry" class="countryAction" method="getCountry"></action>
+		<action name="addCountry" class="countryAction" method="addCountry"></action>
+		<action name="editCountry" class="countryAction" method="editCountry"></action>
+		<action name="findCountry" class="countryAction" method="findCountry"></action>
+		<action name="delCountry" class="countryAction" method="delCountry"></action>
+		<action name="getCountryJson" class="countryAction" method="getCountryJSON"></action>
+	</package>
+	<!-- 角色管理 -->
+	<package name="role" extends="struts-default">
+		<action name="getRole" class="roleAction" method="getRole"></action>
+		<action name="addRole" class="roleAction" method="addRole"></action>
+		<action name="editRole" class="roleAction" method="editRole"></action>
+		<action name="findRole" class="roleAction" method="findRole"></action>
+		<action name="delRole" class="roleAction" method="delRole"></action>
+		<action name="getRoleJson" class="roleAction" method="geRoleJson"></action>
+		<action name="getAppAuthority" class="roleAction" method="getAppAuthority"></action>
+		<action name="updataApp" class="roleAction" method="updataApp"></action>
+	</package>
+	<!-- 系统操作 -->
+	<package name="system" extends="struts-default">
+		<action name="getApps" class="sysAction" method="getApps"></action>
+		<action name="getMenus" class="sysAction" method="getMenus"></action>
+		<action name="getAllApps" class="sysAction" method="getAllApps"></action>
+		<action name="getButtons" class="sysAction" method="getButtons"></action>
+	</package>
+	<!-- 公告管理 -->
+	<package name="pubnotice" extends="struts-default">
+		<action name="getPn" class="pnAction" method="getPubNotice"></action>
+		<action name="findPn" class="pnAction" method="findPn"></action>
+		<action name="delPn" class="pnAction" method="delPn"></action>
+		<action name="addPn" class="pnAction" method="addPn"></action>
+	</package>
+	<!-- 本馆信息 -->
+	<package name="libraryName" extends="struts-default">
+		<action name="addLibName" class="libraAction" method="addLibName"></action>
+		<action name="getLibName" class="libraAction" method="getLibname"></action>
+		<action name="editLibName" class="libraAction" method="editLibname"></action>
+	</package>
+	<!-- 借阅规则 -->
+	<package name="rule" extends="struts-default">
+		<action name="getRule" class="ruleAction" method="getRule"></action>
+		<action name="addRule" class="ruleAction" method="addRule"></action>
+		<action name="findRule" class="ruleAction" method="findRule"></action>
+		<action name="delRule" class="ruleAction" method="delRule"></action>
+		<action name="editRule" class="ruleAction" method="editRule"></action>
+	</package>
+	<!-- 图书类型 -->
+	<package name="booktype" extends="struts-default">
+		<action name="getBookType" class="btAction" method="getBookType"></action>
+		<action name="addBT" class="btAction" method="addBT"></action>
+		<action name="delBT" class="btAction" method="delBT"></action>
+	</package>
+	<!-- 图书管理 -->
+	<package name="bookmanage" extends="struts-default">
+		<action name="getBM" class="bmAction" method="getBM"></action>
+		<action name="getBTJson" class="btAction" method="getBTJson"></action>
+		<action name="addBM" class="bmAction" method="addBM"></action>
+		<action name="findBM" class="bmAction" method="findBM"></action>
+		<action name="editBM" class="bmAction" method="editBM"></action>
+		<action name="delBM" class="bmAction" method="delBM"></action>
+		<action name="findTimes" class="bmAction" method="findTimes"></action>
+		<action name="findBook" class="bmAction" method="findBook"></action>
+		<action name="findISBN" class="bmAction" method="findISBN"></action>
+		<action name="findAuthor" class="bmAction" method="findAuthor"></action>
+		<action name="findPress" class="bmAction" method="findPress"></action>
+		<action name="findTid" class="bmAction" method="findTid"></action>
+		<action name="findNum" class="bmAction" method="findNum"></action>
+		<action name="findBn" class="bmAction" method="findBn"></action>
+		<action name="getBms" class="bmAction" method="getBms"></action>
+	</package>
+	<!-- 图书资源 -->
+	<package name="ebook" extends="struts-default">
+		<action name="getEbook" class="ebAction" method="getEbook"></action>
+		<action name="addEbook" class="ebAction" method="addEbook">
+			<param name="upUrl">/up_ebook</param>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="delEbook" class="ebAction" method="delEbook"></action>
+		<action name="findEk" class="ebAction" method="findEk"></action>
+	</package>
+	<!-- 借阅管理 -->
+	<package name="borrow" extends="struts-default">
+		<action name="getBorBook" class="borBooksAction" method="getBorBook"></action>
+		<action name="editBorbook" class="borBooksAction" method="editBorBook"></action>
+		<action name="editXu" class="borBooksAction" method="editXu"></action>
+		<action name="findGh" class="borBooksAction" method="findGh"></action>
+		<action name="findUid" class="borBooksAction" method="findUid"></action>
+		<action name="findJid" class="borBooksAction" method="findJid"></action>
+		<action name="addBor" class="borBooksAction" method="addBor"></action>
+		<action name="findUids" class="borBooksAction" method="findUids"></action>
+	</package>
+	<!-- 挂失赔偿 -->
+	<package name="compensate" extends="struts-default">
+		<action name="getCompensate" class="cpnAction" method="getCompensate"></action>
+		<action name="delCompen" class="cpnAction" method="delCompen"></action>
+		<action name="addCompen" class="cpnAction" method="addCompen"></action>
+		<action name="editCompen" class="cpnAction" method="editCompen"></action>
+		<action name="findCompen" class="cpnAction" method="findCompen"></action>
+	</package>
+	
+</struts>   

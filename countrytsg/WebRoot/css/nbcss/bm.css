@@ -1,0 +1,23 @@
+#show {
+	margin:5px 0 0 20px;
+	width: 440px;
+	height: 6%;
+	padding:0;
+}
+
+#an {
+	float: right;
+}
+
+.btn1 {
+	width: 75px;
+	height: 30px;
+	background: url('../../images/book/an.png') no-repeat;
+	border: none;
+}
+
+.btn1:hover {
+	width: 75px;
+	height: 30px;
+	background: url('../../images/book/an_over.png') no-repeat;
+}

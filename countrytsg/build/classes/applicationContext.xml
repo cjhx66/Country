@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<!-- 用户操作 -->
+	<bean class="action.UserAction" id="userAction">
+		<property name="userService" ref="userService" />
+		<property name="c" ref="countryAction" />
+		<property name="bbService" ref="bbService"></property>
+	</bean>
+	<bean id="userService" class="service.impl.UserServiceImpl">
+		<property name="ctyAction" ref="countryAction" />
+		<property name="reAction" ref="roleAction" />
+		<property name="userDao" ref="userDao" />
+	</bean>
+	<bean id="userDao" class="dao.impl.UserDaoImpl"></bean>
+	<!-- 帐户操作 -->
+	<bean class="action.CountryAction" id="countryAction">
+		<property name="cs" ref="countryService" />
+	</bean>
+	<bean id="countryService" class="service.impl.CountryServiceImpl">
+		<property name="cd" ref="countryDao" />
+		<property name="udao" ref="userDao"></property>
+	</bean>
+	<bean id="countryDao" class="dao.impl.CountryDaoImpl"></bean>
+	<!-- 角色管理 -->
+	<bean class="action.RoleAction" id="roleAction">
+		<property name="rs" ref="roleService" />
+	</bean>
+	<bean id="roleService" class="service.impl.RoleServiceImpl">
+		<property name="rd" ref="roleDao" />
+		<property name="sysDao" ref="sysDao"></property>
+	</bean>
+	<bean id="roleDao" class="dao.impl.RoleDaoImpl"></bean>
+	<!-- 系统操作 -->
+	<bean class="action.SysAction" id="sysAction">
+		<property name="sysService" ref="sysService"></property>
+	</bean>
+	<bean id="sysService" class="service.impl.SysServiceImpl">
+		<property name="sysDao" ref="sysDao"></property>
+	</bean>
+	<bean id="sysDao" class="dao.impl.SysDaoImpl"></bean>
+	<!-- 本馆信息 -->
+	<bean id="libraAction" class="action.LibraNameAction">
+		<property name="lnservice" ref="libraService"></property>
+		<property name="us" ref="userService"></property>
+		<property name="bs" ref="bmService"></property>
+	</bean>
+	<bean id="libraService" class="service.impl.LibraNameServiceImpl">
+		<property name="lndao" ref="libraDao"></property>
+		<property name="userAction" ref="userAction"></property>
+		<property name="ctyAction" ref="countryAction"></property>
+	</bean>
+	<bean id="libraDao" class="dao.impl.LibraNameDaoImpl"></bean>
+	
+	<!-- 借阅规则 -->
+	<bean id="ruleAction" class="action.RuleAction">
+		<property name="ruService" ref="ruleService"></property>
+	</bean>
+	<bean id="ruleService" class="service.impl.RuleServiceImpl">
+		<property name="ruDao" ref="ruleDao"></property>
+	</bean>
+	<bean id="ruleDao" class="dao.impl.RuleDaoImpl"></bean>
+	<!-- 公告 -->
+	<bean id="pnAction" class="action.PubNoticeAction">
+		<property name="pnService" ref="pubnService"></property>
+	</bean>
+	<bean id="pubnService" class="service.impl.PubNoticeServiceImpl">
+		<property name="pnDao" ref="pubnDao"></property>
+		<property name="userAction" ref="userAction"></property>
+	</bean>
+	<bean id="pubnDao" class="dao.impl.PubNoticeDaoImpl"></bean>
+	<!-- 图书管理 -->
+	<bean id="bmAction" class="action.BookManageAction">
+		<property name="bmService" ref="bmService"></property>
+	</bean>
+	<bean id="bmService" class="service.impl.BookManageServiceImpl">
+		<property name="bmDao" ref="bmDao"></property>
+		<property name="ctyAction" ref="countryAction" />
+		<property name="usAction" ref="userAction" />
+		<property name="btAction" ref="btAction"></property>
+	</bean>
+	<bean id="bmDao" class="dao.impl.BookManageDaoImpl"></bean>
+	<!-- 图书分类 -->
+	<bean id="btAction" class="action.BookTypeAction">
+		<property name="btService" ref="btService"></property>
+	</bean>
+	<bean id="btService" class="service.impl.BookTypeServiceImpl">
+		<property name="btDao" ref="btDao"></property>
+	</bean>
+	<bean id="btDao" class="dao.impl.BookTypeDaoImpl"></bean>
+	<!-- 图书资源 -->
+	<bean id="ebAction" class="action.EbookAction">
+		<property name="es" ref="eservice"></property>
+	</bean>
+	<bean id="eservice" class="service.impl.EbookServiceImpl">
+		<property name="ed" ref="edao"></property>
+	</bean>
+	<bean id="edao" class="dao.impl.EbookDaoImpl"></bean>
+	<!-- 借书，还书，续借 -->
+	<bean id="borBooksAction" class="action.BorBooksAction">
+		<property name="borbs" ref="bbService"></property>
+		<property name="bmAction" ref="bmAction"></property>
+	</bean>
+	<bean id="bbService" class="service.impl.BorBooksServiceImpl">
+		<property name="bbd" ref="bbDao"></property>
+		<property name="bmAction" ref="bmAction"></property>
+		<property name="usAction" ref="userAction"></property>
+	</bean>
+	<bean id="bbDao" class="dao.impl.BorBooksDaoImpl"></bean>
+	<!-- 挂失赔偿 -->
+	<bean id="cpnAction" class="action.CompensateAction">
+		<property name="cpnService" ref="cpnService"></property>
+		<property name="bmAction" ref="bmAction"></property>
+		<property name="bs" ref="bmService"></property>
+	</bean>
+	<bean id="cpnService" class="service.impl.CompensateServiceImpl">
+		<property name="usAction" ref="userAction"></property>
+		<property name="bmAction" ref="bmAction"></property>
+		<property name="cpnDao" ref="cpnDao"></property>
+	</bean>
+	<bean id="cpnDao" class="dao.impl.CompensateDaoImpl"></bean>
+</beans> 

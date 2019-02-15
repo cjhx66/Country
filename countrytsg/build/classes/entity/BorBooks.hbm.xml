@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+	<class name="BorBooks" table="borbooks">
+		<id name="jid" type="int">
+			<column name="jid" />
+			<generator class="identity" /><!-- 生成主键的方式 -->
+		</id>
+		<property name="btype" column="btype"></property>
+		<property name="userid" column="userid"></property>
+		<property name="bid" column="bid"></property>
+		<property name="cid" column="cid"></property>
+		<property name="jianTime" column="jianTime"></property>
+		<property name="huanTime" column="huanTime"></property>
+		<property name="yingTime" column="yingTime"></property>
+	</class>
+
+</hibernate-mapping>

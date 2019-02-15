@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entity">
+	<class name="User" table="users">
+		<id name="uid" type="integer">
+			<column name="uid" />
+			<generator class="identity" /><!-- 生成主键的方式 -->
+		</id>
+		<property name="userid" column="userid"></property>
+		<property name="uname" column="uname"></property>
+		<property name="pwd" column="pwd"></property>
+		<property name="cid" column="cid"></property>
+		<property name="sex" column="sex"></property>
+		<property name="userPhone" column="userPhone"></property>
+		<property name="uaddTime" column="uaddTime"></property>
+		<property name="rid" column="rid"></property>
+		<property name="email" column="email"></property>
+		<property name="address" column="address"></property>
+	</class>
+</hibernate-mapping>

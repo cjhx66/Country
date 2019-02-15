@@ -1,0 +1,34 @@
+#title {
+	font-size: 30px;
+	font-family: "隶书";
+}
+
+#rests {
+	margin-left: 100px;
+	height: 10px;
+}
+
+#userid {
+	float: left;
+}
+
+#time {
+	float: right;
+	margin-right: 30px;
+}
+
+#content {
+	border-top: 3px solid red;
+	margin-top: 5px;
+	padding-top: 8px;
+	text-align: left;
+	padding-left: 25px;
+	width: 600px;
+	height:370px;
+}
+
+#num {
+	float: right;
+	color: #666666;
+	/* margin-top: 280px; */
+}
